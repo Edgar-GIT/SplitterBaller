@@ -5,23 +5,23 @@
 #include <string>
 #include <atomic>
 
-// Estrutura de cor RGB
+// RGB color structure
 struct RGB { unsigned char r, g, b; };
 
-// Tipos de tamanho de bola suportados
+// Supported ball size types
 enum class Size : int { SMALL = 0, MEDIUM = 1, LARGE = 2 };
 
-// Estrutura que representa uma bola individual na simulação
+// Structure representing an individual ball in the simulation
 struct Ball {
-    double x = 0, y = 0;      // Posição no espaço de pixels
-    double vx = 0, vy = 0;    // Vetores de velocidade
+    double x = 0, y = 0;      // Position in pixel space
+    double vx = 0, vy = 0;    // Velocity vectors
     Size   size = Size::SMALL;
-    double hue = 0.0;         // Matiz (0-360) para cor dinâmica
-    double hueSpeed = 20.0;
-    double sat = 0.85;        // Saturação
-    double val = 0.95;        // Brilho
-    int    cooldown = 0;      // Frames de espera para fusão/divisão
-    bool   alive = true;      // Status de existência da bola
+    double hue = 0.0;         // Hue (0-360) for dynamic color
+    double hueSpeed = 20.0;   // Rotation speed of the hue
+    double sat = 0.85;        // Saturation
+    double val = 0.95;        // Brightness/Value
+    int    cooldown = 0;      // Frame wait time for merging/splitting
+    bool   alive = true;      // Existence status of the ball
 };
 
 #endif // BALL_ENGINE_HPP
