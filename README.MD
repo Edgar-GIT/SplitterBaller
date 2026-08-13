@@ -1,38 +1,38 @@
 # Ball Engine - Terminal Bouncing & Splitting
 
-![Exemplo do projeto](main.png)
+![Project Example](main.png)
 
-Um motor de física de partículas de alto desempenho que roda diretamente no terminal Linux, inspirado pelo projeto **LAVAT**. Utiliza truques de renderização ANSI para obter resoluções de sub-caracteres e cores vibrantes.
+A high-performance particle physics engine that runs directly in the Linux terminal, inspired by the **LAVAT** project. It uses ANSI rendering tricks to achieve sub-character resolutions and vibrant colors.
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-- **Renderização de Sub-caractere**: Utiliza o caractere de meio bloco (`▀`) para dobrar a resolução vertical do terminal.
-- **Cores Dinâmicas**: Ciclos de cores baseados em HSV usando sequências de escape TrueColor (24-bit).
-- **Física de Partículas**:
-    - Detecção de colisão com as bordas do terminal.
-    - **Fusão**: Duas bolas do mesmo tamanho se atraem magneticamente e se fundem em uma maior.
-    - **Divisão**: Bolas grandes explodem em várias pequenas ao colidir com as paredes.
-- **Responsivo**: Ajusta automaticamente a simulação ao redimensionar a janela do terminal.
-- **Eficiente**: Escrito em C++17 puro, sem dependências externas como ncurses ou APIs gráficas.
+- **Sub-character Rendering**: Uses the half-block character (`▀`) to double the terminal's vertical resolution.
+- **Dynamic Colors**: HSV-based color cycles using TrueColor (24-bit) ANSI escape sequences.
+- **Particle Physics**:
+    - Collision detection with terminal boundaries.
+    - **Merging**: Two balls of the same size attract each other magnetically and merge into a larger one.
+    - **Splitting**: Large balls explode into several small ones upon colliding with walls.
+- **Responsive**: Automatically adjusts the simulation when the terminal window is resized.
+- **Efficient**: Written in pure C++17, with no external dependencies like ncurses or graphics APIs.
 
-## 🐧 Compatibilidade
+## 🐧 Compatibility
 
-Este projeto foi desenvolvido exclusivamente para sistemas **Linux** devido ao uso de `ioctl` para controle de terminal e sequências de escape ANSI específicas.
+This project was developed exclusively for **Linux** systems due to the use of `ioctl` for terminal control and specific ANSI escape sequences.
 
-## 🛠️ Como Compilar e Rodar
+## 🛠️ How to Compile and Run
 
-Certifique-se de ter o `g++` instalado.
+Make sure you have `g++` installed.
 
 ```bash
 g++ -O2 -std=c++17 -o ball_engine main/ball_engine.cpp
 ./ball_engine
 ```
 
-## 🎮 Controles
+## 🎮 Controls
 
-- **Ctrl+C**: Sai da simulação e restaura as configurações originais do terminal.
-- **Redimensionamento**: O motor detecta o sinal `SIGWINCH` e adapta a renderização instantaneamente.
+- **Ctrl+C**: Exits the simulation and restores original terminal settings.
+- **Resizing**: The engine detects the `SIGWINCH` signal and adapts the rendering instantly.
 
-## 💡 Inspiração
+## 💡 Inspiration
 
-Inspirado pelo efeito visual de lâmpadas de lava e pelo projeto [LAVAT](https://github.com/angelofallars/lavat).
+Inspired by the visual effect of lava lamps and the [LAVAT](https://github.com/angelofallars/lavat) project.
